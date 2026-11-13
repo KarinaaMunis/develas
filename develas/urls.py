@@ -21,6 +21,7 @@ from vagas import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("vagas/", views.mural, name="mural"),
     path("", views.home, name="home"),
 ]
 
