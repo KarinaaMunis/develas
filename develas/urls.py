@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("vagas/", views.mural, name="mural"),
     path("", views.home, name="home"),
+    path("vagas/<int:vaga_id>/", views.detalhe, name="detalhe"),
 ]
 
 
