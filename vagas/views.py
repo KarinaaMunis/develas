@@ -1,14 +1,15 @@
-from django.shortcuts import render
-from vagas.dados import VAGAS
-from django.http import Http404
+from django.http import Http404 
+from django.shortcuts import render 
 
-def home(request):
-    return render(request, "vagas/home.html")
+from vagas.dados import VAGAS 
+
+
+def home(request): 
+    return render(request, "vagas/home.html", {"total": len(VAGAS)}) 
 
 
 def mural(request):
     modalidade = request.GET.get("modalidade", "")
-
     if modalidade:
         vagas = []
         for vaga in VAGAS:
@@ -24,8 +25,8 @@ def mural(request):
     return render(request, "vagas/mural.html", contexto)
 
 
-def detalhe(request, vaga_id):
-    for vaga in VAGAS:
-        if vaga["id"] == vaga_id:
-            return render(request, "vagas/detalhe.html", {"vaga": vaga})
-    raise Http404("Vaga não encontrada")
+def detalhe(request, vaga_id): 
+    for vaga in VAGAS: 
+        if vaga["id"] == vaga_id: 
+            return render(request, "vagas/detalhe.html", {"vaga": vaga}) 
+    raise Http404("Vaga não encontrada") 
