@@ -18,7 +18,13 @@
 
 .navbar .nav-link.active { font-weight: 600; } 
 
-.logo-develas { width: 32px; height: 32px; } 
+.logo-develas {
+    height: 55px;
+    width: auto !important;
+    max-width: none;
+    object-fit: contain;
+}
+
 
 .btn-develas, .btn-develas:hover, .btn-develas:disabled, 
 
